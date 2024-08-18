@@ -1,11 +1,11 @@
 import styled from 'styled-components'
-import { cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const Header = styled.header`
   background-image: linear-gradient(
     45deg,
-    ${cores.corPrincipal},
-    ${cores.corSecundaria}
+    ${colors.corPrincipal},
+    ${colors.corSecundaria}
   );
   margin: 80px 0;
   padding: 16px 24px;
@@ -17,7 +17,7 @@ export const Header = styled.header`
     font-size: 18px;
     flex: 1;
     font-style: italic;
-    color: ${cores.corFundo};
+    color: ${colors.corFundo};
   }
 
   div {
@@ -31,7 +31,7 @@ export const Header = styled.header`
     }
 
     span {
-      color: ${cores.corFundo};
+      color: ${colors.corFundo};
     }
   }
 
