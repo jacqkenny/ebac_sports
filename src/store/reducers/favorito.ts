@@ -2,33 +2,29 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 import { Produto } from '../../App'
 
-type FavoritoState = {
+type CarrinhoState = {
   itens: Produto[]
 }
 
-const initialState: FavoritoState = {
+const initialState: CarrinhoState = {
   itens: []
 }
 
-const favoritoSlice = createSlice({
-  name: 'favorito',
+const carrinhoSlice = createSlice({
+  name: 'favoritos',
   initialState,
   reducers: {
-    adicionaFavorito: (state, action: PayloadAction<Produto>) => {
-      const produto = action.payload
+    adicionar: (state, action: PayloadAction<Produto>) => {
+      const itemFavorito = action.payload
 
-      if (state.itens.find((p) => p.id === produto.id)) {
-        const favoritosSemProduto = state.itens.filter(
-          (p) => p.id !== produto.id
-        )
-        state.itens = favoritosSemProduto
+      if (state.itens.find((produto) => produto.id === itemFavorito.id)) {
+        alert('Item já adicionado aos favoritos')
       } else {
-        state.itens.push(produto)
+        state.itens.push(itemFavorito)
       }
     }
   }
 })
 
-export const { adicionaFavorito } = favoritoSlice.actions
-
-export default favoritoSlice.reducer
+export const { adicionar } = carrinhoSlice.actions
+export default carrinhoSlice.reducer

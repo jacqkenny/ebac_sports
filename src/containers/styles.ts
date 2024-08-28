@@ -1,19 +1,15 @@
 import styled from 'styled-components'
 
-import { colors } from '../../styles'
+export const Produtos = styled.ul`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 24px;
 
-export const Produto = styled.div``
+  @media (max-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
 
-export const Titulo = styled.h3`
-  min-height: 64px;
-`
-
-export const Capa = styled.div`
-  position: relative;
-
-  img {
-    display: block;
-    width: 100%;
-    margin-bottom: 8px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
   }
 `
